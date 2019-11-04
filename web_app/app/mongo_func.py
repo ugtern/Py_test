@@ -16,12 +16,12 @@ class MongoFuncs(MongoDB):
 
         posts_count = db.py_test.count()
         data = [posts_count]    # добавим количество постов к выводу
+        posts = db.py_test.find()\
+            .sort(self.params['order'], asc)\
+            .skip(abs(int(self.params['offset'])))\
+            .limit(abs(int(self.params['limit'])))
 
-        for post in db.py_test.find()\
-                .sort(self.params['order'], asc)\
-                .skip(abs(int(self.params['offset'])))\
-                .limit(abs(int(self.params['limit']))):
-
+        for post in posts:
             data.append(post)
 
         return data
