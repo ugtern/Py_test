@@ -3,6 +3,9 @@ import logging
 
 
 class MongoDB:
+
+    logging.basicConfig(filename='log.log', level=logging.DEBUG)
+
     def __init__(self, con_str):
         self.client = pymongo.MongoClient(con_str)
 

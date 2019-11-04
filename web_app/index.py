@@ -4,6 +4,8 @@ import json
 
 main = web.Application()
 
+""" Загрузим конфигурационные данные из json файла, с будущем возможно дополнение данных для мастабирования системы """
+
 with open('config.json') as file:
     file = json.load(file)
 

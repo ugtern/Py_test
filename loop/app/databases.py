@@ -3,6 +3,9 @@ import logging
 
 
 class MongoDB:
+
+    logging.basicConfig(filename='log.log', level=logging.DEBUG)
+
     def __init__(self, con_str):
         self.client = pymongo.MongoClient(con_str)
 
@@ -15,6 +18,8 @@ class MongoDB:
             return db
 
     def get_next_id(self, db_name, collection_name):
+
+        """ Метод для определения человекопонятного индекса (индекс как в тз) """
 
         db = self.client[db_name]
         result = db.counters.find_and_modify(query={"_id": collection_name},
