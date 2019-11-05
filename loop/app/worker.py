@@ -7,8 +7,6 @@ from app.databases import MongoDB
 
 class WorkerClass(MongoDB):
 
-    logging.basicConfig(filename='log.log', level=logging.DEBUG)
-
     def __init__(self, con_str, url):
         super().__init__(con_str)
         self.url = url
