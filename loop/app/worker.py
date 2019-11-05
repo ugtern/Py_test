@@ -3,9 +3,13 @@ import requests
 from datetime import datetime
 from bs4 import BeautifulSoup
 from app.databases import MongoDB
+import logging
 
 
 class WorkerClass(MongoDB):
+
+    logging.basicConfig(filename='log.log', level=logging.DEBUG)
+
     def __init__(self, con_str, url):
         super().__init__(con_str)
         self.url = url
