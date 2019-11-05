@@ -5,7 +5,7 @@ services:
    volumes:
      - .:/web_app
    ports:
-     - "8000:8000"
+     - "80:80"
    depends_on:
      - pytest_db
      - loop

@@ -1,6 +1,6 @@
 {
   "host": "104.197.98.240",
-  "port": "8080",
+  "port": "80",
   "mongo_con_str": "mongodb://pytest_db:27017",
   "url_for_parse": "https://news.ycombinator.com/news"
 }
