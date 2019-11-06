@@ -29,10 +29,9 @@ class App:
                     param_new = self.get_params_list[param](params[param])
                 except:
                     logging.info('не удается привести параметр к указанному типу')
-                    # здесь можно вставить вывод ошибки и действия при ее возникновению для оповещения пользователя о том что она указал не правильные данные
+                    # здесь можно вставить вывод ошибки и действия при ее возникновению для оповещения пользователя о том что он указал не правильные данные
                 else:
                     mongo_db.check_params(param, param_new)
-
 
         self.test = -self.test
         posts = mongo_db.get_posts(self.test)
