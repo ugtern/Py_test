@@ -37,3 +37,12 @@ class App:
         posts = mongo_db.get_posts(self.test)
 
         return web.json_response(status=200, data=posts)
+
+    @staticmethod
+    def redirect(req):
+
+        """ Добавил редирект для упрощения работы с приложением """
+
+        url = str(req.rel_url)
+
+        raise web.HTTPFound('/posts{}'.format(url.replace('/', '')))

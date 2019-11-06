@@ -32,4 +32,4 @@ class WorkerClass(MongoDB):
                                    'created': datetime.now().isoformat()
                                    })
 
-            time.sleep(3600) # время, можно будет перенести в кофиг файл
+            time.sleep(3600) # время ожидания, можно будет перенести в кофиг файл
